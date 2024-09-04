@@ -13,3 +13,15 @@ function getComputerChoice(){
 }
 
 getComputerChoice();
+
+function getHumanChoice(){
+    let choice = prompt("Choose rock, paper or scissors");
+    if(choice != "rock" && choice != "paper" && choice != "scissors"){
+        alert("invalid input");
+    }else{
+        console.log(choice);
+        return choice;
+    }
+}
+
+getHumanChoice();
