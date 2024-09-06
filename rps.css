@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+}
+
+#choices{
+    display:flex;
+    justify-content: center;    
+}
+
+button{
+    width: 60px;
+    height: 60px;
+}
+
+#buttons{
+    width: 200px;
+}
+
+#rock{
+    background-image: url("rock.jpg");
+    background-size: 100%;
+}
+#paper{
+    background-image: url("paper.jpg");
+    background-size: 100%;
+}
+#scissors{
+    background-image: url("scissors.jpg");
+    background-size: 100%;
+}

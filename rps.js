@@ -1,6 +1,13 @@
 var computerScore = 0;
 var playerScore = 0;
 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+const buttons = document.querySelectorAll("button");
+
+let humanChoice;
 
 function getComputerChoice(){
     let choice;
@@ -16,15 +23,13 @@ function getComputerChoice(){
     return choice;
 }
 
-function getHumanChoice(){
-    let choice = prompt("Choose rock, paper or scissors").toLowerCase();
-    if(choice != "rock" && choice != "paper" && choice!= "scissors"){
-        alert("invalid input");
-    }else{
-        console.log(choice);
-        return choice;
-    }
-}
+buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        humanChoice = event.target.id;
+        console.log(humanChoice);
+        playGame(humanChoice);
+    });
+});
 
 function playRound( humanChoice , computerChoice){
     if(humanChoice == computerChoice){
@@ -56,12 +61,10 @@ function playRound( humanChoice , computerChoice){
     }
 }
 
-function playGame(){
-    for(let i=0; i<5; i++){
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
+function playGame(humanSelection){
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+   
     console.log("computer: " + computerScore);
     console.log("player: " + playerScore);
     if(computerScore == playerScore){
@@ -73,4 +76,5 @@ function playGame(){
     }
 }
 
-playGame();
+
+
