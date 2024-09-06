@@ -15,6 +15,8 @@ const computerScoreText = document.querySelector("#computerScore");
 const playerChoiceImage = document.querySelector("#playerChoice");
 const computerChoiceImage = document.querySelector("#computerChoice");
 
+const message = document.querySelector("#message");
+
 function getComputerChoice(){
     let choice;
     let value = Math.random();
@@ -39,29 +41,29 @@ buttons.forEach((button) => {
 
 function playRound( humanChoice , computerChoice){
     if(humanChoice == computerChoice){
-        console.log("Its a draw!");
+        message.textContent = "Its a draw!";
     } else if(humanChoice == "rock"){
         if(computerChoice == "scissors"){
-            console.log("You win! Rock beats scissors");
+            message.textContent = "Rock beats scissors";
             playerScore++;
         }else if(computerChoice == "paper"){
-            console.log("You lose! Paper beats scissors");
+            message.textContent = "Paper beats scissors";
             computerScore++;
         }
     } else if(humanChoice == "paper"){
         if(computerChoice == "rock"){
-            console.log("You win! Paper beats rock");
+            message.textContent = "Paper beats rock";
             playerScore++;
         }else if(computerChoice == "scissors"){
-            console.log("You lose! scissors beats paper");
+            message.textContent = "Scissors beats paper";
             computerScore++;
         }
     } else if (humanChoice == "scissors"){
         if(computerChoice == "paper"){
-            console.log("You win! Scissors beats paper");
+            message.textContent = "Scissors beats paper";
             playerScore++;
         }else if(computerChoice == "rock"){
-            console.log("You lose! rock beats scissors");
+            message.textContent = "Rock beats scissors";
             computerScore++;
         }
     }
