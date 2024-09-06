@@ -7,10 +7,13 @@ const scissors = document.querySelector("#scissors");
 
 const buttons = document.querySelectorAll("button");
 
-let humanChoice;
+let playerChoice;
 
 const playerScoreText = document.querySelector("#playerScore");
 const computerScoreText = document.querySelector("#computerScore");
+
+const playerChoiceImage = document.querySelector("#playerChoice");
+const computerChoiceImage = document.querySelector("#computerChoice");
 
 function getComputerChoice(){
     let choice;
@@ -28,9 +31,9 @@ function getComputerChoice(){
 
 buttons.forEach((button) => {
     button.addEventListener('click', (event) => {
-        humanChoice = event.target.id;
-        console.log(humanChoice);
-        playGame(humanChoice);
+        playerChoice = event.target.id;
+        console.log(playerChoice);
+        playGame(playerChoice);
     });
 });
 
@@ -62,13 +65,18 @@ function playRound( humanChoice , computerChoice){
             computerScore++;
         }
     }
-
     playerScoreText.textContent = `Player: ${playerScore}` 
     computerScoreText.textContent = `Computer: ${computerScore}`
 }
 
+function showChoices(humanChoice, computerChoice){
+    playerChoiceImage.src = `${humanChoice}.jpg`
+    computerChoiceImage.src = `${computerChoice}.jpg`
+}
+
 function playGame(humanSelection){
     let computerSelection = getComputerChoice();
+    showChoices(humanSelection, computerSelection);
     playRound(humanSelection, computerSelection);
    
     console.log("computer: " + computerScore);

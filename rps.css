@@ -35,3 +35,15 @@ button{
     justify-content: space-around;
 }
 
+#main{
+    display:flex;
+    width:100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#message{
+    width:300px;
+    display: flex;
+    justify-content: center;
+}
