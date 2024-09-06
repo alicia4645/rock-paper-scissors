@@ -9,6 +9,9 @@ const buttons = document.querySelectorAll("button");
 
 let humanChoice;
 
+const playerScoreText = document.querySelector("#playerScore");
+const computerScoreText = document.querySelector("#computerScore");
+
 function getComputerChoice(){
     let choice;
     let value = Math.random();
@@ -59,6 +62,9 @@ function playRound( humanChoice , computerChoice){
             computerScore++;
         }
     }
+
+    playerScoreText.textContent = `Player: ${playerScore}` 
+    computerScoreText.textContent = `Computer: ${computerScore}`
 }
 
 function playGame(humanSelection){
