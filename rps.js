@@ -19,7 +19,7 @@ const message = document.querySelector("#message");
 
 const replay = document.querySelector("#replay");
 
-
+message.style.fontSize = "30px"
 
 function getComputerChoice(){
     let choice;
@@ -45,7 +45,7 @@ buttons.forEach((button) => {
 
 function playRound( humanChoice , computerChoice){
     if(humanChoice == computerChoice){
-        message.textContent = "Its a draw!";
+        message.textContent = "Its a draw";
     } else if(humanChoice == "rock"){
         if(computerChoice == "scissors"){
             message.textContent = "Rock beats Scissors";
@@ -78,8 +78,8 @@ function playRound( humanChoice , computerChoice){
 }
 
 function showChoices(humanChoice, computerChoice){
-    playerChoiceImage.src = `${humanChoice}.jpg`
-    computerChoiceImage.src = `${computerChoice}.jpg`
+    playerChoiceImage.src = `${humanChoice}.png`
+    computerChoiceImage.src = `${computerChoice}.png`
 }
 
 function playGame(humanSelection){
@@ -102,8 +102,8 @@ function endGame(){
     }
 
     const playAgain = document.createElement("button");
-    playAgain.classList.add("#replay")
-    playAgain.textContent = "Play Again"
+    playAgain.textContent = "Play Again";
+    playAgain.style.cssText = "width:200px; background-color:white;";
     playAgain.addEventListener('click', () => {
         location.reload();
     });
